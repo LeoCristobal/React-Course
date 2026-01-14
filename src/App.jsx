@@ -1,14 +1,10 @@
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import MainContent from "./Components/MainContent";
+import Products from "./Components/Products";
 
 const App = () => {
     return (
         <>
             <div className="sample">
-                <Header />
-                <Footer />
-                <MainContent />
+                <Products />
             </div>
         </>
     );
