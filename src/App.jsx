@@ -1,12 +1,10 @@
-import Person from "./Components/Person.jsx";
-import Product from "./Components/Product.jsx";
+import Weather from "./Components/Weather";
 
 const App = () => {
     return (
         <>
             <div className="sample">
-                <Person name="Leo" age="12" />
-                <Product product="Laptop" price="30,000" />
+                <Weather temp="100" />
             </div>
         </>
     );
