@@ -1,10 +1,10 @@
-import Weather from "./Components/Weather";
+import StyleCard from "./Components/StyleCard";
 
 const App = () => {
     return (
         <>
             <div className="sample">
-                <Weather temp="100" />
+                <StyleCard name={"Leo"} />
             </div>
         </>
     );
