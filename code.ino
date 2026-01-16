@@ -7,15 +7,8 @@ void setup()
     lcd.init();
     lcd.clear();
     lcd.backlight();
-
 }
 
 void loop()
 {
-
-  for(int i = 0; i < 10; i++)
-  {
-    lcd.setCuror(0, 2);
-    lcd.print(i);
-  }
 }

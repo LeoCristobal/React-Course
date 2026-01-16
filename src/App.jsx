@@ -1,11 +1,9 @@
-import StyleCard from "./Components/StyleCard";
+import EventDemo from "./Components/EventDemo";
 
 const App = () => {
     return (
         <>
-            <div className="sample">
-                <StyleCard name={"Leo"} />
-            </div>
+            <EventDemo />
         </>
     );
 };
