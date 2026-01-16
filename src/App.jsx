@@ -1,9 +1,15 @@
-import EventDemo from "./Components/EventDemo";
+import Counter from "./Components/Counter";
+import Profile from "./Components/Profile";
+import ShoppingList from "./Components/ShoppingList";
+import TodoList from "./Components/TodoList";
 
 const App = () => {
     return (
         <>
-            <EventDemo />
+            {/* <Counter /> */}
+            {/* <TodoList /> */}
+            {/* <Profile /> */}
+            <ShoppingList />
         </>
     );
 };
