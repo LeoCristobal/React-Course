@@ -4,27 +4,25 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define buzzer 5
 
 int melody[] = {
-  784, 659, 698, 784, 659, 698, 784, 0,
-  659, 523, 587, 659, 523, 587, 659, 523, 587, 659, 587, 523,
-  440, 440, 0, 440, 440, 392, 440, 392, 392, 0, 392,
-  440, 440, 440, 440, 523, 494,
-  784, 659, 698, 784, 659, 698, 784,
-  659, 523, 587, 659, 523, 587, 659, 523, 587, 659, 587, 523,
-  440, 440, 0, 440, 440, 392, 440, 392, 392, 0, 392, 392,
-  440, 440, 440, 0, 440, 523, 494, 494, 494, 494, 523, 0,
-  0
+  392, 392, 349, 330, 294,
+  294, 294, 330, 349, 330,
+  262, 262, 294, 330, 294, 262, 247, 220, 196,
+
+  392, 392, 349, 330, 294,
+  294, 294, 330, 349, 330,
+  262, 294, 330, 349, 330, 294, 262, 247, 262,
+  0,
 };
 
 int durations[] = {
-  4,8,8,4,8,8,2,2,
-  4,8,8,4,8,8,4,8,8,4,8,8,
-  4,8,8,4,8,8,8,8,2,8,8,
-  8,8,4,4,4,1,
-  4,8,8,4,8,8,1,
-  4,8,8,4,8,8,4,8,8,4,8,8,
-  4,8,8,4,8,8,8,8,4,4,8,8,
-  8,8,8,8,4,4,8,8,4,4,8,8,
-  1
+  4, 4, 4, 4, 1,
+  4, 4, 4, 4, 1,
+  4, 2, 2, 2, 2, 2, 4, 4, 1,
+
+  4, 4, 4, 4, 1,
+  4, 4, 4, 4, 1,
+  4, 2, 2, 2, 2, 2, 4, 4, 2,
+  2,
 };
 
 int leds[] = {2, 3, 4};
@@ -53,81 +51,53 @@ void loop() {
   case 0:
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Here's to the");
+    lcd.print("Wherever you go,");
     lcd.setCursor(0, 1);
-    lcd.print("ones that we got");
+    lcd.print("whatever you do");
     break;
 
-  case 7:
+  case 10:
     lcd.clear();
-    lcd.print("Cheers to the");
+    lcd.print("I will be right");
     lcd.setCursor(0, 1);
-    lcd.print("wish you were");
-    break;
-
-  case 13:
-    lcd.clear();
-    lcd.print("here, but you're");
-    lcd.setCursor(0, 1);
-    lcd.print("not");
+    lcd.print("here waiting");
     break;
 
   case 17:
     lcd.clear();
-    lcd.print("'Cause the");
+    lcd.print("for you");
     lcd.setCursor(0, 1);
-    lcd.print("drinks bring");
+    lcd.print(" ");
     break;
 
-  case 21:
+  case 19:
     lcd.clear();
-    lcd.print("back all the");
+    lcd.print("Whatever it");
     lcd.setCursor(0, 1);
-    lcd.print("memories");
+    lcd.print("takes or how my");
     break;
 
   case 27:
     lcd.clear();
-    lcd.print("Of everything");
+    lcd.print("heart breaks");
     lcd.setCursor(0, 1);
-    lcd.print("we've been through");
+    lcd.print(" ");
     break;
 
-  case 34:
+  case 29:
     lcd.clear();
-    lcd.print("Toast to the");
+    lcd.print("I will be right");
     lcd.setCursor(0, 1);
-    lcd.print("ones here today");
+    lcd.print("here waiting");
     break;
 
-  case 41:
+  case 36:
     lcd.clear();
-    lcd.print("Toast to the");
+    lcd.print("for you");
     lcd.setCursor(0, 1);
-    lcd.print("ones we lost");
-    break;
-
-  case 51:
-    lcd.clear();
-    lcd.print("'Cause the drinks");
-    lcd.setCursor(0, 1);
-    lcd.print("bring back");
-    break;
-
-  case 55:
-    lcd.clear();
-    lcd.print("all the memories");
-    break;
-
-  case 61:
-    lcd.clear();
-    lcd.print("Memories bring");
-    lcd.setCursor(0, 1);
-    lcd.print("back you");
+    lcd.print(" ");
     break;
 }
-
-
     delay(duration * 1.3);
     digitalWrite(leds[thisNote % 3], LOW);
     noTone(buzzer);

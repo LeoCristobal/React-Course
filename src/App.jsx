@@ -1,15 +1,10 @@
-import Counter from "./Components/Counter";
-import Profile from "./Components/Profile";
-import ShoppingList from "./Components/ShoppingList";
-import TodoList from "./Components/TodoList";
+import CopyInput from "./Components/CopyInput";
+import Switcher from "./Components/Switcher";
 
 const App = () => {
     return (
         <>
-            {/* <Counter /> */}
-            {/* <TodoList /> */}
-            {/* <Profile /> */}
-            <ShoppingList />
+            <Switcher />
         </>
     );
 };
