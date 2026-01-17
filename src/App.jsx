@@ -1,10 +1,15 @@
-import CopyInput from "./Components/CopyInput";
-import Switcher from "./Components/Switcher";
+import BasicEffect from "./Components/BasicEffect";
+import CounterEffect from "./Components/CounterEffect";
+import FetchDataEffect from "./Components/FetchDataEffect";
 
 const App = () => {
     return (
         <>
-            <Switcher />
+            <div>
+                {/* <BasicEffect /> */}
+                {/* <CounterEffect /> */}
+                <FetchDataEffect />
+            </div>
         </>
     );
 };
