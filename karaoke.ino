@@ -4,25 +4,59 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define buzzer 5
 
 int melody[] = {
-  392, 392, 349, 330, 294,
-  294, 294, 330, 349, 330,
-  262, 262, 294, 330, 294, 262, 247, 220, 196,
 
-  392, 392, 349, 330, 294,
-  294, 294, 330, 349, 330,
-  262, 294, 330, 349, 330, 294, 262, 247, 262,
   0,
+
+  392, 440, 523, 440, 659, 659, 0,
+  587, 0,
+
+  392, 440, 523, 440, 587, 587, 0,
+  523, 0, 494, 440, 0,
+
+  392, 440, 523, 440, 523, 587, 0,
+  494, 440, 392, 0, 392, 0, 587, 0, 523, 0,
+
+  392, 440, 523, 440, 659, 659, 0,
+  587, 0,
+
+  392, 440, 523, 440, 784, 494, 0,
+  523, 0, 494, 440, 0,
+
+  392, 440, 523, 440, 523, 587, 0,
+  494, 440, 392, 0, 392, 0, 587, 0, 523, 0,
+
+  523, 0, 587, 0, 392, 0, 587, 0, 659, 0,
+  784, 740, 659, 0,
+
+  523, 0, 587, 0, 392, 0
 };
 
 int durations[] = {
-  4, 4, 4, 4, 1,
-  4, 4, 4, 4, 1,
-  4, 2, 2, 2, 2, 2, 4, 4, 1,
 
-  4, 4, 4, 4, 1,
-  4, 4, 4, 4, 1,
-  4, 2, 2, 2, 2, 2, 4, 4, 2,
-  2,
+   2,
+
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8,
+
+  8, 8, 8, 8, 2, 8, 8,
+  4, 8, 8, 8, 8,
+
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8, 4, 8, 8, 8, 8, 8, 1, 4,
+
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8,
+
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8, 8, 8, 8,
+
+  8, 8, 8, 8, 2, 8, 8,
+  4, 8, 3, 8, 8, 8, 8, 8, 1, 4,
+
+  2, 6, 2, 6, 4, 4, 2, 6, 2, 3,
+  8, 8, 8, 8,
+
+  2, 6, 2, 6, 2, 1
 };
 
 int leds[] = {2, 3, 4};
@@ -46,58 +80,65 @@ void loop() {
     tone(buzzer, melody[thisNote], duration);
     digitalWrite(leds[thisNote % 3], HIGH);
 
-    switch (thisNote) {
 
-  case 0:
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Wherever you go,");
-    lcd.setCursor(0, 1);
-    lcd.print("whatever you do");
-    break;
+    if(thisNote == 0){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna give");
+      lcd.setCursor(0, 1);
+      lcd.print("you up");
+    }
+    else if(thisNote == 7){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna let");
+      lcd.setCursor(0, 1);
+      lcd.print("you down");
+    }
+    else if(thisNote == 14){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna run");
+      lcd.setCursor(0, 1);
+      lcd.print("around and");
+    }
+    else if(thisNote == 22){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("desert you");
+      lcd.setCursor(0, 1);
+      lcd.print("");
+    }
+    else if(thisNote == 25){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna make");
+      lcd.setCursor(0, 1);
+      lcd.print("you cry");
+    }
+    else if(thisNote == 32){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna say");
+      lcd.setCursor(0, 1);
+      lcd.print("goodbye");
+    }
+    else if(thisNote == 39){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Never gonna tell");
+      lcd.setCursor(0, 1);
+      lcd.print("a lie and hurt");
 
-  case 10:
-    lcd.clear();
-    lcd.print("I will be right");
-    lcd.setCursor(0, 1);
-    lcd.print("here waiting");
-    break;
+    }
+    else if(thisNote == 48){
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("you");
+      lcd.setCursor(0, 1);
+      lcd.print("a lie and hurt");
+    }
 
-  case 17:
-    lcd.clear();
-    lcd.print("for you");
-    lcd.setCursor(0, 1);
-    lcd.print(" ");
-    break;
-
-  case 19:
-    lcd.clear();
-    lcd.print("Whatever it");
-    lcd.setCursor(0, 1);
-    lcd.print("takes or how my");
-    break;
-
-  case 27:
-    lcd.clear();
-    lcd.print("heart breaks");
-    lcd.setCursor(0, 1);
-    lcd.print(" ");
-    break;
-
-  case 29:
-    lcd.clear();
-    lcd.print("I will be right");
-    lcd.setCursor(0, 1);
-    lcd.print("here waiting");
-    break;
-
-  case 36:
-    lcd.clear();
-    lcd.print("for you");
-    lcd.setCursor(0, 1);
-    lcd.print(" ");
-    break;
-}
     delay(duration * 1.3);
     digitalWrite(leds[thisNote % 3], LOW);
     noTone(buzzer);

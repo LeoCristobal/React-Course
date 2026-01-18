@@ -1,16 +1,12 @@
-import UserContext from "./Components/UserContext";
-import UserProfile from "./Components/UserProfile";
-import UserUpdate from "./Components/UserUpdate";
+import Counter from "./Components/Counter";
 
-const App = () => {
+function App() {
     return (
-        <>
-            <UserContext>
-                <UserUpdate />
-                <UserProfile />
-            </UserContext>
-        </>
+        <div>
+            <h1>React useReducer Example</h1>
+            <Counter />
+        </div>
     );
-};
+}
 
 export default App;
