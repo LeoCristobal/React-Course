@@ -1,13 +1,11 @@
-import FocusInput from "./Components/FocusInput";
-import Timer from "./Components/Timer";
+import Counter from "./Components/Counter";
 
-function App() {
+const App = () => {
     return (
-        <div>
-            {/* <FocusInput /> */}
-            <Timer />
-        </div>
+        <>
+            <Counter />
+        </>
     );
-}
+};
 
 export default App;
