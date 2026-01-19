@@ -1,18 +1,18 @@
 #include <SoftwareSerial.h>
 #include <DHT.h>
 
-// ================= PHONE NUMBERS =================
-const String PHONE_1 = "ENTER_PHONE_NUMBER_HERE";
+// PHONE NUMBERS
+const String PHONE_1 = "+63912345678"; // Sample Number
 const String PHONE_2 = ""; // optional
 const String PHONE_3 = ""; // optional
 // you can add another here if you have many phone number
 
-// ================= SIM800L =================
+// SIM800L
 #define rxPin 2
 #define txPin 3
 SoftwareSerial sim800L(rxPin, txPin);
 
-// ================= PINS =================
+// PINS
 #define flame_sensor_pin 5
 #define buzzer_pin 4
 #define smoke_pin A0
@@ -21,7 +21,7 @@ SoftwareSerial sim800L(rxPin, txPin);
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-// ================= VARIABLES =================
+// VARIABLES
 boolean fire_flag = 0;
 
 void setup()
@@ -31,9 +31,6 @@ void setup()
 
   pinMode(flame_sensor_pin, INPUT);
   pinMode(buzzer_pin, OUTPUT);
-  digitalWrite(buzzer_pin, LOW);
-
-  dht.begin();
 
   Serial.println("Initializing SIM800L...");
   sim800L.println("AT");
@@ -45,7 +42,7 @@ void loop()
   // Read sensors
   int flame_value = digitalRead(flame_sensor_pin); // LOW = fire
   int smoke_value = analogRead(smoke_pin);         // higher = more smoke
-  float temperature = dht.readTemperature();       // in °C
+  float temperature = analogRead(te);       // in °C
 
   Serial.print(" | Flame: "); Serial.print(flame_value);
   Serial.print(" | Smoke: "); Serial.print(smoke_value);
@@ -76,7 +73,7 @@ void loop()
   delay(1000);
 }
 
-// ================= CALL FUNCTIONS =================
+//  CALL FUNCTIONS
 void make_multi_call()
 {
   if (PHONE_1 != "") make_call(PHONE_1);
