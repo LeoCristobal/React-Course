@@ -1,9 +1,12 @@
-import Meal from "./Components/Meal";
+import {} from "react-icons/fa";
+import Calculator from "./Components/Calculator";
 
 const App = () => {
     return (
         <>
-            <Meal />
+            <div className="container">
+                <Calculator />
+            </div>
         </>
     );
 };
