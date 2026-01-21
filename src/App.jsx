@@ -1,12 +1,10 @@
-import {} from "react-icons/fa";
-
-import ToggleBackgroundColor from "./Components/ToggleBackgroundColor";
+import HiddenSearchBar from "./Components/HiddenSearchBar";
 
 const App = () => {
     return (
         <>
             <div className="container">
-                <ToggleBackgroundColor />
+                <HiddenSearchBar />
             </div>
         </>
     );
