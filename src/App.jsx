@@ -1,11 +1,12 @@
 import {} from "react-icons/fa";
-import Calculator from "./Components/Calculator";
+
+import ToggleBackgroundColor from "./Components/ToggleBackgroundColor";
 
 const App = () => {
     return (
         <>
             <div className="container">
-                <Calculator />
+                <ToggleBackgroundColor />
             </div>
         </>
     );
